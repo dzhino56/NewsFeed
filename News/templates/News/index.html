@@ -1,0 +1,58 @@
+{% extends 'News/base.html' %}
+
+{% block title %}
+    {{ Новости }}
+{% endblock %}
+
+{% block content %}
+    <h1>Главная страница</h1>
+
+    <div class="sm-category__main-sorting_split">Показать по:
+        <a href="?page={{ page.number }}&pageSize=10" class="active ajax-facet-value">
+            10
+        </a>
+        <a href="?page={{ page.number }}&pageSize=20" class="ajax-facet-value updateFacet">
+            20
+        </a>
+        <a href="?page={{ page.number }}&pageSize=50" class="ajax-facet-value updateFacet">
+            50
+        </a>
+    </div>
+
+    {% for el in page.object_list %}
+        <div class="alert-warning">
+            <h3>{{ el.title }}</h3>
+            <h2>{{ el.datetime }}</h2>
+            <p>{{ el.content }}</p>
+        </div>
+    {% endfor %}
+    {% if is_paginated %}
+        <div class="pages">
+            <ul class="pagination">
+                <li class="page-item {% if not prev_url %}disabled{% endif %}">
+                    <a class="page-link" href="{{ prev_url }}&pageSize={{ news_per_page }}" tabindex="-1"
+                       aria-disabled="true">Previous</a>
+                </li>
+
+                {% for i in page.paginator.page_range %}
+                    {% if page.number == i %}
+                        <li class="page-item active" aria-current="page">
+                            <a class="page-link" href="?page={{ i }}&pageSize={{ news_per_page }}">{{ i }}</a>
+                        </li>
+                    {% elif i > page.number|add:-3 and i < page.number|add:3 or i == 1 %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ i }}&pageSize={{ news_per_page }}">{{ i }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+
+                <li class="page-item {% if not next_url %}disabled{% endif %}">
+                    <a class="page-link" href="{{ next_url }}&pageSize={{ news_per_page }}">Next</a>
+                </li>
+            </ul>
+        </div>
+    {% endif %}
+{% endblock %}
+
+
+

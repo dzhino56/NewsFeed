@@ -1,0 +1,132 @@
+body {
+    background: #dbdbdb;
+}
+
+aside .circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 50px;
+    color: #fff;
+    line-height: 60px;
+    text-align: center;
+    background: #000;
+    font-family: 'Yeseva One', cursive;
+}
+
+aside h1 {
+    font-family: 'Yeseva One', cursive;
+}
+
+aside p {
+    font-family: 'Yeseva One', cursive;
+
+}
+
+aside {
+    float: left;
+    background: #424950;
+    width: 20%;
+    padding: 2.5%;
+    height: 100%;
+    color: #fff;
+    border-right: 5px solid #8B8D8E;
+    position: fixed;
+}
+
+aside img {
+    width: 200px;
+    float: left;
+}
+
+aside h3 {
+    margin-top: 150px;
+    font-size: 28px;
+}
+
+aside ul {
+    list-style: none;
+    float: left;
+}
+
+aside li {
+    color: #fff;
+    display: block;
+    margin-top: 20px;
+    margin-left: 10px;
+    text-align: left;
+    transition: transform .6s ease;
+}
+
+aside li:hover, aside a:hover {
+    color: #eb5959;
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+main .head {
+    margin-top: 20px;
+}
+
+main .features {
+    float: left;
+    color: black;
+    margin-left: 22%;
+    text-align: left;
+    width: 75%;
+}
+
+main .features h1 {
+    font-size: 50px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+button {
+    background: #007bff;
+    color: #fff;
+    padding: 6px;
+    border-radius: 6px;
+    border: none;
+}
+
+main .alert-warning {
+    border-radius: 8px;
+    background: white;
+    clear: both;
+    margin: 20px;
+}
+
+main .sm-category__main-sorting_split {
+    margin: 20px;
+}
+
+main .alert-warning h3 {
+    color: #181818;
+    font-size: 30px;
+    padding-top: 40px;
+    padding-left: 40px;
+    text-align: left;
+}
+
+main .pages {
+    margin: 20px;
+}
+
+main .alert-warning h2 {
+    color: #181818;
+    font-size: 14px;
+    text-align: left;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+main .alert-warning p {
+    color: #181818;
+    font-size: 18px;
+    text-align: left;
+    padding-left: 40px;
+    padding-bottom: 20px;
+    padding-right: 40px;
+}

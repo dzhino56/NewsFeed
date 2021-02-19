@@ -1,0 +1,40 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'News/css/news.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+</head>
+<body>
+<aside>
+    <div class="circle">В</div>
+    <h1>Время знать</h1>
+    <h3>Навигация</h3>
+    <a href="{% url 'home' %}">
+        <li><i class="fa fa-home"></i> Главная</li>
+    </a>
+    <a href="{% url 'create' %}">
+        <li><i class="fa fa-plus-circle"></i> Добавить новость</li>
+    </a>
+    <a href="{% url 'about' %}">
+        <li><i class="fa fa-info-circle"></i> О нас</li>
+    </a>
+    </div>
+</aside>
+<main>
+    <div class="features">
+        {% block content %}{% endblock %}
+    </div>
+
+</main>
+</body>
+</html>
